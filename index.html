@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KUMA CC MEMBERSHIP | 일본 구마모토 골프회원권</title>
-<meta name="description" content="쿠마CC 27홀과 연계 골프장 총 63홀, SILVER·GOLD 회원권, 회원 동행 조건, 7월 GOLD 특별혜택을 한눈에 확인하세요.">
+<meta name="description" content="쿠마CC 27홀과 연계 골프장 총 63홀, SILVER·GOLD 회원권, 기명회원 동행 조건, 겨울 대비 LAST 10 특별혜택과 VIP 전담관리까지 한눈에 확인하세요.">
 <style>
 :root{
   --ink:#132019; --muted:#627069; --green:#123c2d; --green2:#1d6b4d;
@@ -334,6 +334,450 @@ p{font-size:18px;line-height:1.9;color:#4f5a54}
 @media(max-width:900px){.course-map-grid,.stay-grid,.local-life-grid{grid-template-columns:1fr}.season-gallery{grid-template-columns:1fr 1fr;grid-template-rows:260px 210px 210px}.season-photo:first-child{grid-column:1/3;grid-row:auto}.aerial-band-copy{padding:56px 34px}}
 @media(max-width:620px){.season-gallery{grid-template-columns:1fr;grid-template-rows:none}.season-photo,.season-photo:first-child{grid-column:auto;grid-row:auto;height:235px}.course-map-image img{min-height:290px}.local-card img{height:250px}.aerial-band{min-height:430px}.aerial-band-copy{padding:46px 22px}}
 
+
+/* =========================================================
+   WINTER EVENT / VIP MANAGER UPDATE
+========================================================= */
+
+/* Compact member structure */
+.people{
+  display:grid;
+  align-items:start;
+  justify-content:center;
+  flex-wrap:initial;
+  margin:24px auto 16px;
+  width:100%;
+}
+.people.people-silver{
+  max-width:240px;
+  grid-template-columns:64px 24px 64px;
+  gap:10px;
+}
+.people.people-gold{
+  max-width:390px;
+  grid-template-columns:58px 22px repeat(3,52px);
+  gap:7px;
+}
+.person{
+  width:auto;
+  min-width:0;
+}
+.head{
+  width:20px;
+  height:20px;
+  margin-bottom:6px;
+}
+.body{
+  width:34px;
+  height:42px;
+  border-radius:14px 14px 10px 10px;
+}
+.person small{
+  margin-top:6px;
+  font-size:10px;
+  line-height:1.35;
+}
+.plus{
+  padding-top:26px;
+  font-size:22px;
+}
+
+/* Winter deadline */
+.winter-event-badge{
+  width:fit-content;
+  margin-top:24px;
+  padding:12px 18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color:#fff;
+}
+.winter-event-badge span{
+  color:rgba(255,255,255,.62);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.2px;
+}
+.winter-event-badge b{
+  color:#f0d6a6;
+  font-size:15px;
+}
+.countdown{
+  max-width:520px;
+  margin-top:16px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.countdown-item{
+  padding:18px 12px;
+  border-radius:20px;
+  background:rgba(255,255,255,.065);
+  border:1px solid rgba(255,255,255,.11);
+  text-align:center;
+  backdrop-filter:blur(12px);
+}
+.countdown-item b{
+  display:block;
+  color:#fff;
+  font-size:34px;
+  line-height:1;
+  font-weight:950;
+}
+.countdown-item span{
+  display:block;
+  margin-top:7px;
+  color:rgba(255,255,255,.48);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.2px;
+}
+
+/* VIP manager section */
+.manager-section{
+  background:
+    radial-gradient(circle at 10% 12%,rgba(201,165,107,.14),transparent 23%),
+    linear-gradient(180deg,#f8f5ed,#eef2ed);
+}
+.manager-grid{
+  display:grid;
+  grid-template-columns:.78fr 1.22fr;
+  gap:52px;
+  align-items:center;
+}
+.manager-photo-wrap{
+  display:flex;
+  justify-content:center;
+}
+.manager-photo-card{
+  width:min(100%,410px);
+  position:relative;
+  padding:14px;
+  border-radius:32px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(15,39,30,.15);
+  border:1px solid rgba(0,0,0,.05);
+}
+.manager-photo-card:before{
+  content:'';
+  position:absolute;
+  inset:28px -18px -18px 28px;
+  z-index:-1;
+  border-radius:30px;
+  background:linear-gradient(135deg,#174b39,#c9a56b);
+  opacity:.22;
+}
+.manager-photo-card img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center 30%;
+  border-radius:23px;
+}
+.manager-photo-label{
+  position:absolute;
+  left:30px;
+  right:30px;
+  bottom:30px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(10,27,20,.88);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
+  color:#fff;
+}
+.manager-photo-label small{
+  display:block;
+  color:#d9bd86;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.2px;
+}
+.manager-photo-label b{
+  display:block;
+  margin-top:5px;
+  font-size:22px;
+}
+.manager-name-card{
+  margin-top:22px;
+  padding:20px 22px;
+  border-radius:22px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.05);
+  box-shadow:0 10px 26px rgba(0,0,0,.04);
+}
+.manager-name-card small{
+  display:block;
+  color:#b68e50;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+.manager-name-card b{
+  display:block;
+  margin-top:5px;
+  color:#123c2d;
+  font-size:26px;
+}
+.manager-name-card span{
+  display:block;
+  margin-top:7px;
+  color:#65716a;
+  font-size:14px;
+  line-height:1.7;
+}
+.manager-points{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+.manager-point{
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:13px;
+  align-items:start;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(0,0,0,.04);
+}
+.manager-point i{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:13px;
+  background:#123c2d;
+  color:#e5c991;
+  font-size:11px;
+  font-style:normal;
+  font-weight:950;
+}
+.manager-point b{
+  display:block;
+  color:#203028;
+  font-size:15px;
+}
+.manager-point span{
+  display:block;
+  margin-top:4px;
+  color:#6a756f;
+  font-size:13px;
+  line-height:1.65;
+}
+.manager-quote{
+  margin-top:18px;
+  padding:20px 22px;
+  border-left:4px solid #c9a56b;
+  border-radius:0 19px 19px 0;
+  background:#123c2d;
+  color:#fff;
+  font-size:17px;
+  line-height:1.7;
+  font-weight:800;
+}
+.direct-contact-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:22px;
+}
+.direct-contact-btn{
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:14px 18px;
+  border-radius:18px;
+  box-shadow:0 12px 25px rgba(0,0,0,.08);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.direct-contact-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 32px rgba(0,0,0,.12);
+}
+.direct-contact-btn svg{
+  width:27px;
+  height:27px;
+  flex:0 0 27px;
+}
+.direct-contact-btn span{
+  display:block;
+}
+.direct-contact-btn small{
+  display:block;
+  font-size:10px;
+  font-weight:800;
+  opacity:.68;
+}
+.direct-contact-btn b{
+  display:block;
+  margin-top:2px;
+  font-size:17px;
+}
+.direct-contact-btn.call{
+  background:#123c2d;
+  color:#fff;
+}
+.direct-contact-btn.sms{
+  background:linear-gradient(135deg,#e1c58f,#bd9456);
+  color:#172019;
+}
+.manager-phone-link{
+  display:inline-block;
+  margin-top:18px;
+  color:#123c2d;
+  font-size:31px;
+  font-weight:950;
+  letter-spacing:-1.2px;
+}
+.manager-offer{
+  margin-top:18px;
+  padding:16px 18px;
+  border-radius:17px;
+  background:#fff5e6;
+  border:1px solid rgba(182,142,80,.22);
+}
+.manager-offer b{
+  display:block;
+  color:#8e652c;
+  font-size:15px;
+}
+.manager-offer span{
+  display:block;
+  margin-top:4px;
+  color:#75664e;
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* Direct mobile call / SMS */
+.mobile-cta{
+  padding:9px 10px;
+}
+.mobile-cta-inner{
+  grid-template-columns:1fr auto auto;
+  gap:7px;
+}
+.mobile-contact{
+  min-width:52px;
+  padding:11px 10px!important;
+  text-align:center;
+  border-radius:12px;
+  font-size:12px!important;
+  font-weight:950!important;
+}
+.mobile-contact.call{
+  background:#1d6b4d!important;
+  color:#fff!important;
+}
+.mobile-contact.sms{
+  background:linear-gradient(135deg,#e1c58f,#bd9456)!important;
+  color:#172019!important;
+}
+
+@media(max-width:900px){
+  .manager-grid{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  .manager-photo-card{
+    max-width:360px;
+  }
+}
+
+@media(max-width:620px){
+  .rule-card{
+    padding:22px 15px;
+  }
+  .people{
+    margin:20px auto 14px;
+  }
+  .people.people-silver{
+    grid-template-columns:52px 18px 52px;
+    gap:5px;
+  }
+  .people.people-gold{
+    max-width:300px;
+    grid-template-columns:50px 16px repeat(3,42px);
+    gap:3px;
+  }
+  .head{
+    width:17px;
+    height:17px;
+    margin-bottom:5px;
+  }
+  .body{
+    width:29px;
+    height:35px;
+    border-radius:11px 11px 8px 8px;
+  }
+  .person small{
+    font-size:8.5px;
+    line-height:1.25;
+  }
+  .plus{
+    padding-top:20px;
+    font-size:18px;
+  }
+  .countdown-item{
+    padding:15px 8px;
+  }
+  .countdown-item b{
+    font-size:28px;
+  }
+  .winter-event-badge{
+    display:grid;
+    gap:3px;
+    border-radius:18px;
+  }
+  .manager-photo-card{
+    max-width:310px;
+  }
+  .manager-copy h2{
+    font-size:29px;
+  }
+  .manager-point{
+    grid-template-columns:38px 1fr;
+    padding:14px;
+  }
+  .manager-point i{
+    width:34px;
+    height:34px;
+  }
+  .direct-contact-actions{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .direct-contact-btn{
+    min-height:62px;
+    gap:8px;
+    padding:12px 10px;
+  }
+  .direct-contact-btn svg{
+    width:23px;
+    height:23px;
+    flex-basis:23px;
+  }
+  .direct-contact-btn b{
+    font-size:15px;
+  }
+  .manager-phone-link{
+    font-size:28px;
+  }
+  .mobile-cta small{
+    font-size:8px;
+  }
+  .mobile-cta b{
+    font-size:12px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -348,7 +792,7 @@ p{font-size:18px;line-height:1.9;color:#4f5a54}
       <span>KUMA COUNTRY CLUB · KUMAMOTO</span>
     </div>
     <div data-reveal>
-      <div class="badge"><i></i>7월에만 가능합니다</div>
+      <div class="badge"><i></i>겨울 대비 LAST 10 · 8월 10일까지</div>
       <h1>겨울에도 골프를<br>포기 못하신다면<br><br><span>이건 꼭 한번</span><br>보셔야 합니다.</h1>
       <p class="hero-sub">한국의 겨울에도 이어지는 골프 시즌. 가까운 일본 규슈 구마모토에서 반복해서 이용할 수 있는 정식 골프회원권을 소개합니다.</p>
     </div>
@@ -598,7 +1042,7 @@ p{font-size:18px;line-height:1.9;color:#4f5a54}
       <div class="rule-card" data-reveal>
         <div class="kicker">KUMA SILVER</div>
         <h3>기명회원 1인 + 동반 1인</h3>
-        <div class="people">
+        <div class="people people-silver">
           <div class="person"><div class="head"></div><div class="body owner"></div><small>기명회원<br>본인</small></div>
           <div class="plus">+</div>
           <div class="person"><div class="head"></div><div class="body"></div><small>동반자<br>1인</small></div>
@@ -609,7 +1053,7 @@ p{font-size:18px;line-height:1.9;color:#4f5a54}
       <div class="rule-card" data-reveal>
         <div class="kicker">KUMA GOLD</div>
         <h3>기명회원 1인 + 동반 최대 3인</h3>
-        <div class="people">
+        <div class="people people-gold">
           <div class="person"><div class="head"></div><div class="body owner"></div><small>기명회원<br>본인</small></div>
           <div class="plus">+</div>
           <div class="person"><div class="head"></div><div class="body"></div><small>동반<br>1</small></div>
@@ -664,7 +1108,7 @@ p{font-size:18px;line-height:1.9;color:#4f5a54}
           <div>· 가족·지인과 4인 팀 활용</div>
           <div>· 기명회원 동행 시 동반 최대 3인 회원대우</div>
           <div>· 이용횟수·방문일수 제한 없음</div>
-          <div>· 7월 GOLD 특별혜택 적용</div>
+          <div>· 8월 10일까지 겨울 대비 특별혜택 적용</div>
         </div>
       </div>
     </div>
@@ -788,17 +1232,75 @@ p{font-size:18px;line-height:1.9;color:#4f5a54}
 <!-- PROMO -->
 <section class="promo">
   <div class="wrap">
-    <div class="kicker" data-reveal>JULY GOLD BENEFIT</div>
-    <h2 data-reveal>딱 7월 31일까지,<br>GOLD 신규 입회 특별혜택</h2>
-    <div class="ticket" data-reveal>
-      <div class="ticket-head"><span>JULY SPECIAL</span><span>VALID UNTIL 2026.07.31</span></div>
-      <div class="ticket-body">
-        <div><div class="kicker">BENEFIT 01</div><b>50만원<br>PAYBACK</b><small>7월 GOLD 신규 입회자 대상</small></div>
-        <div class="ticket-plus">+</div>
-        <div><div class="kicker">BENEFIT 02</div><b>인천 ↔ 구마모토<br>왕복 항공권 1회 지원</b><small>입회자 본인 1인 · 최대 30만원 지원</small></div>
+    <div class="kicker" data-reveal>WINTER PREP · LAST 10 SPECIAL</div>
+
+    <h2 data-reveal>
+      겨울이 오기 전에 준비하는<br>
+      마지막 10구좌 특별조건
+    </h2>
+
+    <p
+      class="lead"
+      style="margin-top:16px;color:rgba(255,255,255,.82);max-width:820px"
+      data-reveal
+    >
+      한겨울이 시작된 뒤 회원권을 찾기보다,
+      미리 준비하는 분을 위한 겨울 대비 사전 입회 혜택입니다.
+      8월 10일까지 입회 완료자에게만 적용됩니다.
+    </p>
+
+    <div class="winter-event-badge" data-reveal>
+      <span>WINTER EARLY PREP</span>
+      <b>2026.08.10까지</b>
+    </div>
+
+    <div class="countdown" data-reveal aria-label="겨울 대비 특별혜택 마감 카운트다운">
+      <div class="countdown-item">
+        <b id="countDays">--</b>
+        <span>DAYS</span>
+      </div>
+      <div class="countdown-item">
+        <b id="countHours">--</b>
+        <span>HOURS</span>
+      </div>
+      <div class="countdown-item">
+        <b id="countMinutes">--</b>
+        <span>MINUTES</span>
       </div>
     </div>
-    <p class="small" style="margin-top:16px;color:rgba(255,255,255,.5)" data-reveal>※ 투어클럽 제공 특별혜택 / GOLD 신규 입회자 대상 / SILVER 제외 / 7월 31일까지 입회 완료 기준</p>
+
+    <div class="ticket" data-reveal>
+      <div class="ticket-head">
+        <span>WINTER PREP SPECIAL</span>
+        <span>VALID UNTIL 2026.08.10</span>
+      </div>
+
+      <div class="ticket-body">
+        <div>
+          <div class="kicker">BENEFIT 01</div>
+          <b>50만원<br>PAYBACK</b>
+          <small>GOLD 신규 입회자 대상</small>
+        </div>
+
+        <div class="ticket-plus">+</div>
+
+        <div>
+          <div class="kicker">BENEFIT 02</div>
+          <b>인천 ↔ 구마모토<br>왕복 항공권 1회 지원</b>
+          <small>입회자 본인 1인 · 최대 30만원 지원</small>
+        </div>
+      </div>
+    </div>
+
+    <p
+      class="small"
+      style="margin-top:16px;color:rgba(255,255,255,.52)"
+      data-reveal
+    >
+      ※ 투어클럽 제공 특별혜택 / KUMA GOLD 신규 입회자 대상 / SILVER 제외<br>
+      ※ 2026년 8월 10일까지 입회 완료 기준<br>
+      ※ 회사 보유분 10구좌 소진 시 기한 전 조기 종료될 수 있습니다.
+    </p>
   </div>
 </section>
 
@@ -808,7 +1310,7 @@ p{font-size:18px;line-height:1.9;color:#4f5a54}
     <div class="kicker" data-reveal>CURRENT COMPANY INVENTORY</div>
     <div class="n" data-reveal>10</div>
     <h2 data-reveal>회사 보유분 LAST 10구좌</h2>
-    <p style="margin-top:16px" data-reveal>2026년 7월 24일 기준 · 계약금 입금분 포함</p>
+    <p style="margin-top:16px" data-reveal>2026년 7월 28일 기준 · 계약금 입금분 포함</p>
     <p class="small" style="margin-top:12px;color:rgba(255,255,255,.45)" data-reveal>※ 전체 회원권의 최종 분양을 의미하는 것이 아니라 현재 회사가 보유 중인 잔여 회원권 기준입니다. 계약 진행에 따라 수량은 변동될 수 있습니다.</p>
   </div>
 </section>
@@ -848,26 +1350,115 @@ p{font-size:18px;line-height:1.9;color:#4f5a54}
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta" id="contact">
-  <div class="wrap">
-    <div class="kicker" data-reveal>KUMA CC MEMBERSHIP</div>
-    <h2 data-reveal>겨울에도 골프를 포기하지 않는다면,<br>회원권의 가치는 ‘소유’보다 ‘활용’에 있습니다.</h2>
-    <p class="lead" style="margin-top:18px;color:rgba(255,255,255,.84)" data-reveal>얼마나 자주, 얼마나 편하게, 얼마나 오래 이용할 수 있는지까지 비교해보세요.</p>
-    <div class="cta-box" data-reveal>
-      <div class="grid2">
-        <div><div class="small" style="color:var(--gold2);font-weight:900">KUMA SILVER</div><h3 style="margin-top:6px">기명 1 + 무기명 1</h3><p style="margin-top:6px;color:#fff;font-size:24px;font-weight:950">1,210만원</p></div>
-        <div><div class="small" style="color:var(--gold2);font-weight:900">KUMA GOLD</div><h3 style="margin-top:6px">기명 1 + 무기명 3</h3><p style="margin-top:6px;color:#fff;font-size:24px;font-weight:950">1,650만원</p></div>
-      </div>
-      <div style="margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:15px;line-height:1.8;color:rgba(255,255,255,.76)">
-        GOLD 7월 31일까지 특별혜택 · 회사 보유분 LAST 10구좌
+<!-- VIP MANAGER / FINAL CTA -->
+<section class="manager-section" id="contact">
+  <div class="wrap manager-grid">
+
+    <div class="manager-photo-wrap" data-reveal>
+      <div class="manager-photo-card">
+        <img
+          src="assets/kim-daewoo-vip-manager.jpg"
+          alt="투어클럽 김대우 VIP팀장"
+        >
+        <div class="manager-photo-label">
+          <small>TOURCLUB VIP MEMBER CARE</small>
+          <b>김대우 VIP팀장</b>
+        </div>
       </div>
     </div>
-    <div style="margin-top:36px" data-reveal>
-      <div class="small" style="color:rgba(255,255,255,.56)">쿠마CC 회원권 입회 및 이용 상담</div>
-      <div class="cta-phone">010-2599-1095</div>
-      <p style="color:rgba(255,255,255,.72)">투어클럽 김대우팀장</p>
+
+    <div class="manager-copy" data-reveal>
+      <div class="kicker">YOUR GOLF MEMBERSHIP MANAGER</div>
+
+      <h2>
+        해외골프회원권은<br>
+        골프장만큼 담당자가 중요합니다.
+      </h2>
+
+      <p class="lead" style="margin-top:18px">
+        회원권은 계약으로 끝나는 상품이 아닙니다.
+        입회 후 예약, 일정 변경, 숙박, 현지 이용,
+        동반자 조건과 돌발상황 대응까지
+        결국 한 명의 담당자를 통해 계속 이용하게 됩니다.
+      </p>
+
+      <div class="manager-name-card">
+        <small>투어클럽 VIP 회원관리</small>
+        <b>김대우 VIP팀장</b>
+        <span>
+          입회 전 비교부터 입회 후 실제 이용까지
+          한 사람의 전담 창구로 직접 관리하겠습니다.
+        </span>
+      </div>
+
+      <div class="manager-points">
+        <div class="manager-point">
+          <i>01</i>
+          <div>
+            <b>조건을 정확하게 설명합니다.</b>
+            <span>가격뿐 아니라 기명회원 동행, 동반자 이용조건과 별도비용까지 명확하게 안내합니다.</span>
+          </div>
+        </div>
+
+        <div class="manager-point">
+          <i>02</i>
+          <div>
+            <b>입회 후에도 연락이 이어집니다.</b>
+            <span>예약·숙박·현지 이용 문의를 여러 곳에 반복해서 설명하지 않도록 전담 창구가 됩니다.</span>
+          </div>
+        </div>
+
+        <div class="manager-point">
+          <i>03</i>
+          <div>
+            <b>S급 기준의 회원관리를 약속합니다.</b>
+            <span>회원권을 판매하고 끝나는 담당자가 아니라, 필요할 때 바로 찾을 수 있는 해외골프 전담매니저가 되겠습니다.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="manager-quote">
+        “쿠마CC를 이용하시는 동안
+        든든하게 기댈 수 있는 해외골프 전담매니저가 되겠습니다.”
+      </div>
+
+      <div class="direct-contact-actions">
+        <a class="direct-contact-btn call" href="tel:01025991095" aria-label="김대우 VIP팀장에게 전화 상담">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7.2 3.8L9.7 8.3L7.8 10.1C8.9 12.4 10.7 14.2 13 15.3L14.8 13.4L19.3 15.9V19C19.3 20.1 18.4 21 17.3 21C9.4 20.5 3.5 14.6 3 6.7C3 5.6 3.9 4.7 5 4.7L7.2 3.8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>
+            <small>바로 연결</small>
+            <b>전화 상담</b>
+          </span>
+        </a>
+
+        <a class="direct-contact-btn sms" href="sms:01025991095" aria-label="김대우 VIP팀장에게 문자 상담">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 5H19V16H10L6 20V16H5V5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M8 9H16M8 12H14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span>
+            <small>편하게 남기기</small>
+            <b>문자 상담</b>
+          </span>
+        </a>
+      </div>
+
+      <a class="manager-phone-link" href="tel:01025991095">
+        010-2599-1095
+      </a>
+
+      <p class="small" style="margin-top:8px">
+        전화 연결이 어려운 경우 문자를 남겨주시면 확인 후 순차적으로 연락드리겠습니다.
+      </p>
+
+      <div class="manager-offer">
+        <b>겨울 대비 LAST 10 특별조건</b>
+        <span>8월 10일까지 입회 완료 또는 회사 보유분 소진 시 종료</span>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -878,7 +1469,30 @@ p{font-size:18px;line-height:1.9;color:#4f5a54}
 </div>
 
 
-<div class="mobile-cta"><div class="mobile-cta-inner"><div><small>회사 보유분 LAST 10</small><b>쿠마CC 회원권 상담</b></div><a href="#contact">문의하기</a></div></div>
+<div class="mobile-cta">
+  <div class="mobile-cta-inner">
+    <div>
+      <small>겨울 대비 LAST 10 · 8월 10일까지</small>
+      <b>김대우 VIP팀장 직통상담</b>
+    </div>
+
+    <a
+      class="mobile-contact call"
+      href="tel:01025991095"
+      aria-label="전화 상담"
+    >
+      전화
+    </a>
+
+    <a
+      class="mobile-contact sms"
+      href="sms:01025991095"
+      aria-label="문자 상담"
+    >
+      문자
+    </a>
+  </div>
+</div>
 
 <script>
 const progress=document.getElementById('scrollProgress');
@@ -890,6 +1504,40 @@ const snow=document.getElementById('snowLayer');if(snow){for(let i=0;i<32;i++){c
 const tabs=document.querySelectorAll('[data-plan]'),result=document.getElementById('planResult');const pc={silver:['KUMA SILVER','기명회원 본인 + 동반 1인 중심으로 이용하는 경우 먼저 비교해볼 수 있습니다. 단, 기명회원 본인의 동행은 반드시 필요합니다.'],gold:['KUMA GOLD','가족·지인과 함께 4인 팀으로 이용하는 경우 GOLD의 활용도가 높을 수 있습니다. 기명회원 본인이 반드시 동행해야 하며 동반 최대 3인까지 회원대우가 적용됩니다.']};
 tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');const d=pc[t.dataset.plan];result.innerHTML='<small>RECOMMENDED</small><b>'+d[0]+'</b><p>'+d[1]+'</p>'}));
 document.querySelectorAll('.faq-item').forEach(item=>{const btn=item.querySelector('.faq-btn'),ans=item.querySelector('.faq-answer');btn.addEventListener('click',()=>{const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-answer').style.maxHeight=null});if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}})});
+
+const winterDeadline = new Date("2026-08-10T23:59:59+09:00");
+
+function updateWinterCountdown(){
+  const now = new Date();
+  const difference = winterDeadline.getTime() - now.getTime();
+
+  const daysElement = document.getElementById("countDays");
+  const hoursElement = document.getElementById("countHours");
+  const minutesElement = document.getElementById("countMinutes");
+
+  if(!daysElement || !hoursElement || !minutesElement){
+    return;
+  }
+
+  if(difference <= 0){
+    daysElement.textContent = "00";
+    hoursElement.textContent = "00";
+    minutesElement.textContent = "00";
+    return;
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+
+  daysElement.textContent = String(days).padStart(2, "0");
+  hoursElement.textContent = String(hours).padStart(2, "0");
+  minutesElement.textContent = String(minutes).padStart(2, "0");
+}
+
+updateWinterCountdown();
+setInterval(updateWinterCountdown, 60000);
+
 </script>
 </body>
 </html>
