@@ -2235,98 +2235,128 @@ img[loading="lazy"]{
 .live-status-bar{
   position:fixed;
   left:50%;
-  bottom:24px;
+  bottom:22px;
   z-index:9997;
   transform:translateX(-50%);
-  width:min(420px,calc(100vw - 32px));
+  width:max-content;
+  max-width:calc(100vw - 28px);
   display:flex;
   align-items:center;
-  gap:12px;
-  padding:13px 17px;
-  border-radius:18px;
-  background:rgba(10,24,18,.95);
-  border:1px solid rgba(255,255,255,.11);
-  box-shadow:0 18px 44px rgba(0,0,0,.22);
-  -webkit-backdrop-filter:blur(14px);
-  backdrop-filter:blur(14px);
+  gap:9px;
+  padding:9px 13px;
+  border-radius:14px;
+  background:rgba(10,24,18,.91);
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:0 10px 26px rgba(0,0,0,.16);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
   color:#fff;
   pointer-events:none;
 }
+
 .live-status-dot{
-  width:10px;
-  height:10px;
-  flex:0 0 10px;
+  width:7px;
+  height:7px;
+  flex:0 0 7px;
   border-radius:50%;
-  background:#7ee0aa;
-  box-shadow:0 0 0 0 rgba(126,224,170,.42);
-  animation:liveStatusPulse 1.8s ease-out infinite;
+  background:#75d8a0;
+  box-shadow:0 0 0 0 rgba(117,216,160,.3);
+  animation:liveStatusPulse 2s ease-out infinite;
 }
+
 .live-status-copy{
   min-width:0;
 }
+
 .live-status-copy small{
   display:block;
-  color:#d9bd86;
-  font-size:9px;
-  line-height:1.35;
-  font-weight:900;
-  letter-spacing:.12em;
-}
-.live-status-copy b{
-  display:block;
-  margin-top:3px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  color:#fff;
-  font-size:13px;
-  line-height:1.45;
-  font-weight:800;
-  transition:opacity .2s ease,transform .2s ease;
-}
-.live-status-copy b.is-changing{
-  opacity:0;
-  transform:translateY(4px);
-}
-.live-status-copy strong{
-  display:inline-block;
-  min-width:34px;
-  color:#e7cc98;
-  font-size:16px;
-  font-weight:900;
-  text-align:center;
-  transition:transform .2s ease,opacity .2s ease;
-}
-.live-status-copy strong.is-changing{
-  opacity:.2;
-  transform:translateY(-4px) scale(.96);
-}
-.live-status-note{
-  display:block;
-  margin-top:3px;
-  color:rgba(255,255,255,.38);
-  font-size:8px;
-  line-height:1.35;
-  letter-spacing:-.01em;
-}
-@keyframes liveStatusPulse{
-  0%{box-shadow:0 0 0 0 rgba(126,224,170,.42)}
-  70%{box-shadow:0 0 0 9px rgba(126,224,170,0)}
-  100%{box-shadow:0 0 0 0 rgba(126,224,170,0)}
-}
-@media(max-width:620px){
-  .live-status-bar{
-    bottom:88px;
-    width:calc(100% - 24px);
-    padding:11px 14px;
-    border-radius:15px;
-  }
-  .live-status-copy b{font-size:12px}
-}
-@media(prefers-reduced-motion:reduce){
-  .live-status-dot{animation:none!important}
+  color:rgba(225,197,143,.78);
+  font-size:7px;
+  line-height:1.25;
+  font-weight:850;
+  letter-spacing:.11em;
 }
 
+.live-status-copy b{
+  display:block;
+  margin-top:2px;
+  color:rgba(255,255,255,.9);
+  font-size:11px;
+  line-height:1.35;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.live-status-copy strong{
+  display:inline-block;
+  min-width:25px;
+  color:#e5ca95;
+  font-size:13px;
+  font-weight:900;
+  text-align:center;
+}
+
+.live-status-note{
+  display:block;
+  margin-top:1px;
+  color:rgba(255,255,255,.28);
+  font-size:7px;
+  line-height:1.3;
+  white-space:nowrap;
+}
+
+@keyframes liveStatusPulse{
+  0%{
+    box-shadow:0 0 0 0 rgba(117,216,160,.3);
+  }
+  70%{
+    box-shadow:0 0 0 6px rgba(117,216,160,0);
+  }
+  100%{
+    box-shadow:0 0 0 0 rgba(117,216,160,0);
+  }
+}
+
+@media(max-width:620px){
+  .live-status-bar{
+    bottom:86px;
+    max-width:calc(100vw - 24px);
+    gap:7px;
+    padding:7px 10px;
+    border-radius:12px;
+    background:rgba(10,24,18,.86);
+    box-shadow:0 8px 20px rgba(0,0,0,.13);
+  }
+
+  .live-status-dot{
+    width:6px;
+    height:6px;
+    flex-basis:6px;
+  }
+
+  .live-status-copy small{
+    font-size:6.5px;
+  }
+
+  .live-status-copy b{
+    font-size:10px;
+  }
+
+  .live-status-copy strong{
+    min-width:23px;
+    font-size:12px;
+  }
+
+  .live-status-note{
+    font-size:6.5px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .live-status-dot{
+    animation:none;
+  }
+}
 </style>
 </head>
 <body>
@@ -3888,14 +3918,24 @@ img[loading="lazy"]{
 
 
 <!-- 하단 연출형 관심도 표시 -->
-<div class="live-status-bar" role="status" aria-live="polite" aria-atomic="true">
+<div
+  class="live-status-bar"
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+>
   <span class="live-status-dot" aria-hidden="true"></span>
+
   <div class="live-status-copy">
     <small>LIVE INTEREST</small>
+
     <b>
       현재 <strong id="viewerCount">6명</strong>이 페이지를 보고 있습니다.
     </b>
-    <span class="live-status-note">※ 실시간 인원을 확인 중 입니다.</span>
+
+    <span class="live-status-note">
+      ※ 실시간 인원을 확인 중입니다.
+    </span>
   </div>
 </div>
 
