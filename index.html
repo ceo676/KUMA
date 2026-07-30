@@ -2227,6 +2227,106 @@ img[loading="lazy"]{
   }
 }
 
+
+
+/* =========================================================
+   LIVE STATUS BAR
+========================================================= */
+.live-status-bar{
+  position:fixed;
+  left:50%;
+  bottom:24px;
+  z-index:9997;
+  transform:translateX(-50%);
+  width:min(420px,calc(100vw - 32px));
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px 17px;
+  border-radius:18px;
+  background:rgba(10,24,18,.95);
+  border:1px solid rgba(255,255,255,.11);
+  box-shadow:0 18px 44px rgba(0,0,0,.22);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  color:#fff;
+  pointer-events:none;
+}
+.live-status-dot{
+  width:10px;
+  height:10px;
+  flex:0 0 10px;
+  border-radius:50%;
+  background:#7ee0aa;
+  box-shadow:0 0 0 0 rgba(126,224,170,.42);
+  animation:liveStatusPulse 1.8s ease-out infinite;
+}
+.live-status-copy{
+  min-width:0;
+}
+.live-status-copy small{
+  display:block;
+  color:#d9bd86;
+  font-size:9px;
+  line-height:1.35;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.live-status-copy b{
+  display:block;
+  margin-top:3px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#fff;
+  font-size:13px;
+  line-height:1.45;
+  font-weight:800;
+  transition:opacity .2s ease,transform .2s ease;
+}
+.live-status-copy b.is-changing{
+  opacity:0;
+  transform:translateY(4px);
+}
+.live-status-copy strong{
+  display:inline-block;
+  min-width:34px;
+  color:#e7cc98;
+  font-size:16px;
+  font-weight:900;
+  text-align:center;
+  transition:transform .2s ease,opacity .2s ease;
+}
+.live-status-copy strong.is-changing{
+  opacity:.2;
+  transform:translateY(-4px) scale(.96);
+}
+.live-status-note{
+  display:block;
+  margin-top:3px;
+  color:rgba(255,255,255,.38);
+  font-size:8px;
+  line-height:1.35;
+  letter-spacing:-.01em;
+}
+@keyframes liveStatusPulse{
+  0%{box-shadow:0 0 0 0 rgba(126,224,170,.42)}
+  70%{box-shadow:0 0 0 9px rgba(126,224,170,0)}
+  100%{box-shadow:0 0 0 0 rgba(126,224,170,0)}
+}
+@media(max-width:620px){
+  .live-status-bar{
+    bottom:88px;
+    width:calc(100% - 24px);
+    padding:11px 14px;
+    border-radius:15px;
+  }
+  .live-status-copy b{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .live-status-dot{animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -2257,7 +2357,7 @@ img[loading="lazy"]{
     <div data-reveal>
       <div class="badge"><i></i>겨울 대비 LAST 10 · 8월 10일까지</div>
       <h1>겨울에도 골프를<br>포기 못하신다면<br><br><span>이건 꼭 한번</span><br>보셔야 합니다.</h1>
-      <p class="hero-sub">한국의 겨울에도 이어지는 골프 시즌. 가까운 일본 규슈 구마모토에서 반복해서 이용할 수 있는 정식 골프회원권을 소개합니다.</p>
+      <p class="hero-sub">한국 겨울에도 라운드를 이어갈 수 있는 일본 구마모토 정식 골프회원권입니다.</p>
     </div>
     <div class="hero-stats">
       <div class="hero-stat"><b>27 HOLES</b><span>KUMA COUNTRY CLUB</span></div>
@@ -2279,9 +2379,7 @@ img[loading="lazy"]{
           <strong>시설과 코스에 피해 없이 정상 영업 중입니다.</strong>
         </h2>
         <p>
-          구마모토 지진 이후 확인된 공식 운영정보를 기준으로 안내드립니다.
-          골프장은 정상 운영 중이지만, 공항에서 히토요시·쿠마 지역으로 이동하는 일부 도로와
-          지역 생활 인프라는 아직 복구가 진행 중입니다.
+          KUMA CC는 정상 영업 중입니다. 다만 일부 도로와 지역 생활 인프라는 복구 중이므로 예약 전 최신 동선을 확인합니다.
         </p>
       </div>
 
@@ -2362,7 +2460,7 @@ img[loading="lazy"]{
     <h2 data-reveal>12월이 되면 골퍼들에게<br>매년 같은 고민이 시작됩니다.</h2>
     <div class="quote" data-reveal>“이번 겨울에는 도대체 어디서 골프를 치지?”</div>
     <div style="margin-top:30px" data-reveal>
-      <p>한국은 추워서 라운드하기 어렵고, 해외골프를 생각하면 자연스럽게 동남아부터 떠올리게 됩니다. 하지만 긴 비행시간과 높은 기온, 습한 날씨가 부담스럽거나 며칠씩 긴 일정을 빼기 어려운 분들도 많습니다.</p>
+      <p>한국 겨울에는 라운드가 어렵고, 동남아는 긴 비행과 더운 날씨가 부담될 수 있습니다.</p>
       <p class="lead" style="margin-top:18px;font-weight:800;color:var(--green2)">그런 골퍼에게 비교해볼 만한 선택지가 일본 규슈 구마모토의 쿠마CC입니다.</p>
     </div>
   </div>
@@ -2386,7 +2484,7 @@ img[loading="lazy"]{
     <div class="winter-side right">
       <div class="kicker" data-reveal>KUMAMOTO · KUMA</div>
       <h2 data-reveal>골프를 쉬지 말고,<br>장소를 바꿔보세요.</h2>
-      <p class="lead" style="margin-top:17px;color:rgba(255,255,255,.83)" data-reveal>비교적 가까운 일본 규슈 구마모토. 겨울에도 라운드를 이어가고, 골프 후에는 히토요시에서 식사와 온천, 휴식을 함께 즐기는 방식입니다.</p>
+      <p class="lead" style="margin-top:17px;color:rgba(255,255,255,.83)" data-reveal>가까운 일본 규슈에서 겨울 라운드와 히토요시 온천·휴식을 함께 즐길 수 있습니다.</p>
     </div>
     <div class="switch-label">KOREA → KUMAMOTO</div>
     <div class="flightline"><div class="plane">✈</div></div>
@@ -2398,7 +2496,7 @@ img[loading="lazy"]{
   <div class="wrap">
     <div class="kicker" data-reveal>KUMAMOTO WINTER</div>
     <h2 data-reveal>한국의 겨울에도<br>골프 시즌을 이어가는 방법</h2>
-    <p class="lead" style="margin-top:16px" data-reveal>히토요시·쿠마 지역은 한겨울 아침에는 쌀쌀하지만, 낮 시간대를 중심으로 겨울 라운드를 계획할 수 있는 지역입니다.</p>
+    <p class="lead" style="margin-top:16px" data-reveal>아침은 쌀쌀하지만 낮 시간대에는 겨울 라운드를 계획할 수 있습니다.</p>
     <div class="grid4" style="margin-top:28px">
       <div class="temp" data-reveal><div class="m">NOV</div><div class="t">약 18℃</div><div class="small">낮 최고 평균</div></div>
       <div class="temp" data-reveal><div class="m">DEC</div><div class="t">약 12℃</div><div class="small">낮 최고 평균</div></div>
@@ -2416,7 +2514,7 @@ img[loading="lazy"]{
   <div class="wrap">
     <div class="kicker" data-reveal>KUMA THROUGH THE SEASONS</div>
     <h2 data-reveal>계절이 바뀌면,<br>같은 골프장도 다른 표정을 보여줍니다.</h2>
-    <p class="lead" style="margin-top:15px" data-reveal>푸른 페어웨이부터 봄꽃, 가을 단풍까지. 한 번의 방문보다 반복 방문에서 더 다양한 풍경을 만날 수 있습니다.</p>
+    <p class="lead" style="margin-top:15px" data-reveal>봄꽃, 푸른 페어웨이, 가을 단풍까지 계절마다 다른 풍경을 만날 수 있습니다.</p>
     <div class="season-gallery">
       <div class="season-photo" data-reveal><img src="assets/kuma-course-aerial-mountain.jpg" alt="쿠마CC 전경" loading="lazy" decoding="async"><span>PANORAMIC COURSE VIEW</span></div>
       <div class="season-photo" data-reveal><img src="assets/kuma-autumn-cart.jpg" alt="쿠마CC 가을 라운드" loading="lazy" decoding="async"><span>AUTUMN GOLF</span></div>
@@ -2433,8 +2531,8 @@ img[loading="lazy"]{
     <div class="kicker" data-reveal>WHY KYUSHU</div>
     <h2 data-reveal>겨울골프,<br>꼭 멀리 가야 하는 건 아닙니다.</h2>
     <div class="why-grid">
-      <div class="why-card" data-reveal><div class="why-icon">✈</div><h3>가까운 해외골프</h3><p style="margin-top:8px">장거리 이동이 부담스러운 골퍼라면 일본 규슈는 비교적 짧은 일정으로 다시 찾기 좋은 선택지가 될 수 있습니다.</p></div>
-      <div class="why-card" data-reveal><div class="why-icon">◷</div><h3>짧은 일정으로 반복 방문</h3><p style="margin-top:8px">2박3일·3박4일처럼 짧은 해외골프를 선호한다면 ‘한 번 다녀오는 여행’보다 ‘반복 방문 가능한 거점’의 가치가 커집니다.</p></div>
+      <div class="why-card" data-reveal><div class="why-icon">✈</div><h3>가까운 해외골프</h3><p style="margin-top:8px">장거리 이동 부담을 줄이고 짧은 일정으로 다시 찾기 좋습니다.</p></div>
+      <div class="why-card" data-reveal><div class="why-icon">◷</div><h3>짧은 일정으로 반복 방문</h3><p style="margin-top:8px">2박 3일·3박 4일 일정으로 반복 방문하기 좋은 구조입니다.</p></div>
     </div>
   </div>
 </section>
@@ -2490,9 +2588,9 @@ img[loading="lazy"]{
     <div class="course-map-grid">
       <div class="course-map-image" data-reveal><img src="assets/kuma-course-map.jpg" alt="쿠마CC 27홀 코스 안내도" loading="lazy" decoding="async"></div>
       <div class="course-map-points">
-        <div class="course-map-point" data-reveal><b>SATSUMA · HYUGA · HIGO</b><span>총 3개 코스로 구성된 27홀 골프장. 방문 일정과 운영에 따라 서로 다른 코스 조합을 즐길 수 있습니다.</span></div>
-        <div class="course-map-point" data-reveal><b>한 곳만 반복하는 느낌을 줄이다</b><span>같은 골프장 안에서도 코스 구성과 풍경이 달라 반복 방문 시 다양한 라운드 경험을 만들 수 있습니다.</span></div>
-        <div class="course-map-point" data-reveal><b>회원권의 핵심은 반복 활용</b><span>한 번 보고 끝나는 여행지가 아니라 다시 찾아가며 코스를 경험하는 방식에 더 잘 맞는 구조입니다.</span></div>
+        <div class="course-map-point" data-reveal><b>SATSUMA · HYUGA · HIGO</b><span>사츠마·휴가·히고 3개 코스로 구성된 27홀입니다.</span></div>
+        <div class="course-map-point" data-reveal><b>한 곳만 반복하는 느낌을 줄이다</b><span>코스 구성과 풍경이 달라 반복 방문의 단조로움을 줄입니다.</span></div>
+        <div class="course-map-point" data-reveal><b>회원권의 핵심은 반복 활용</b><span>한 번보다 반복 이용할 때 회원권의 가치가 커집니다.</span></div>
       </div>
     </div>
   </div>
@@ -2508,7 +2606,7 @@ img[loading="lazy"]{
     <div>
       <div class="kicker" data-reveal>OFFICIAL MEMBERSHIP</div>
       <h2 data-reveal>단순한 여행 패키지가 아니라<br>정식 회원자격을 보유합니다.</h2>
-      <p class="lead" style="margin-top:16px" data-reveal>입회 시 회원권 증서와 회원 자격이 부여되고, 회원 전용 예약 시스템과 회원 우대조건을 통해 반복 이용하는 구조입니다.</p>
+      <p class="lead" style="margin-top:16px" data-reveal>입회 후 회원권 증서와 회원 자격을 받고 회원 우대조건으로 반복 이용합니다.</p>
       <div class="proof-points">
         <div class="point" data-reveal><div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14v16H5z" stroke="#1d6b4d" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#1d6b4d" stroke-width="2" stroke-linecap="round"/></svg></div><div><h3>정식 회원권 증서</h3><p class="small">회원자격을 공식적으로 보유하는 회원권 구조</p></div></div>
         <div class="point" data-reveal><div class="icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#1d6b4d" stroke-width="2"/><path d="M5 20c0-4 3-7 7-7s7 3 7 7" stroke="#1d6b4d" stroke-width="2"/></svg></div><div><h3>회원 전용 예약 시스템</h3><p class="small">필요할 때 다시 예약해 반복 방문하는 방식</p></div></div>
@@ -2540,7 +2638,7 @@ img[loading="lazy"]{
       <div class="kicker">ONE MEMBERSHIP · THREE COURSES</div>
       <div class="big63">63</div>
       <h2 style="margin-top:18px">TOTAL HOLES</h2>
-      <p class="lead" style="margin-top:18px;color:rgba(255,255,255,.82)">쿠마CC 한 곳만 반복하는 회원권이 아니라 총 3개 골프장, 63홀을 연계해 이용할 수 있습니다.</p>
+      <p class="lead" style="margin-top:18px;color:rgba(255,255,255,.82)">쿠마CC·체리CC·크라운CC, 총 3개 골프장 63홀을 연계 이용합니다.</p>
     </div>
     <div data-reveal>
       <div class="clubrow"><div><b>KUMA CC</b><p class="small">쿠마 컨트리클럽</p></div><span>27H</span></div>
@@ -2557,7 +2655,7 @@ img[loading="lazy"]{
   <div class="wrap">
     <div class="kicker" data-reveal>A DAY AS A KUMA MEMBER</div>
     <h2 data-reveal>회원 이용 시,<br>이런 하루를 그려볼 수 있습니다.</h2>
-    <p style="margin-top:14px" data-reveal>아래는 실제 확정 일정이 아니라 쿠마CC 회원 이용 시 구성할 수 있는 하루의 예시입니다.</p>
+    <p style="margin-top:14px" data-reveal>회원 이용 시 구성할 수 있는 하루 예시입니다.</p>
     <div class="daytimeline">
       <div class="dayrow" data-reveal><div class="daytime">07:00</div><div class="daybox"><b>호텔에서 조식</b><span>여유롭게 하루를 시작합니다.</span></div></div>
       <div class="dayrow" data-reveal><div class="daytime">08:00</div><div class="daybox"><b>골프장 이동</b><span>호텔↔골프장 송영을 이용합니다.</span></div></div>
@@ -2573,7 +2671,7 @@ img[loading="lazy"]{
   <div class="wrap">
     <div class="kicker" data-reveal>SAMPLE 2N3D</div>
     <h2 data-reveal>짧게 다녀온다면,<br>이런 흐름으로도 생각할 수 있습니다.</h2>
-    <p style="margin-top:14px" data-reveal>※ 아래 일정은 이해를 돕기 위한 예시이며 실제 항공·티타임·현지 일정에 따라 달라질 수 있습니다.</p>
+    <p style="margin-top:14px" data-reveal>※ 실제 일정은 항공편과 티타임에 따라 달라질 수 있습니다.</p>
     <div class="trip-grid">
       <div class="trip-card" data-reveal><div class="trip-label">DAY 1</div><h3>한국 → 구마모토</h3><div class="trip-list"><div>· 한국 출발</div><div>· 구마모토 도착</div><div>· 히토요시 이동</div><div>· 체크인</div><div>· 저녁 / 휴식</div></div></div>
       <div class="trip-card" data-reveal><div class="trip-label">DAY 2</div><h3>18홀 라운드</h3><div class="trip-list"><div>· 조식</div><div>· 골프장 이동</div><div>· 18홀 라운드</div><div>· 호텔 복귀</div><div>· 온천 / 저녁</div></div></div>
@@ -2587,7 +2685,7 @@ img[loading="lazy"]{
   <div class="wrap">
     <div class="kicker" data-reveal>IMPORTANT MEMBER RULE</div>
     <h2 data-reveal>가장 중요한 이용조건입니다.<br>기명 입회자 본인이 반드시 동행해야 합니다.</h2>
-    <p class="lead" style="margin-top:16px" data-reveal>무기명 동반자가 회원권을 독립적으로 사용하는 구조가 아닙니다. 기명회원이 함께 방문하는 경우에만 동반자에게 회원대우가 적용됩니다.</p>
+    <p class="lead" style="margin-top:16px" data-reveal>기명회원 본인이 동행해야 동반자도 회원대우를 받을 수 있습니다.</p>
 
     <div class="rule-grid">
       <div class="rule-card" data-reveal>
@@ -2678,7 +2776,7 @@ img[loading="lazy"]{
   <div class="wrap">
     <div class="kicker" data-reveal>MEMBER USE PRICE</div>
     <h2 data-reveal>엔화만 보면 감이 오지 않으니,<br>원화 기준으로 바로 계산했습니다.</h2>
-    <p class="lead" style="margin-top:16px" data-reveal>투어클럽 공식 쿠마CC 회원 요금표의 그린피와 숙박비를 합산한 1일 체류비를 2026년 7월 30일 참고환율로 환산했습니다.</p>
+    <p class="lead" style="margin-top:16px" data-reveal>공식 회원 요금표의 그린피와 숙박비를 원화로 환산했습니다.</p>
     <div class="exchange-reference" data-reveal>2026.07.28 참고환율 · 100엔 ≈ 894원 기준</div>
 
     <div class="fees">
@@ -2712,7 +2810,7 @@ img[loading="lazy"]{
     <div class="trip-cost-area">
       <div class="trip-cost-title" data-reveal>
         <div><div class="kicker">TRIP COST AT A GLANCE</div><h3>2박 3일·3박 4일 현지 체류비</h3></div>
-        <p>투어클럽 공식 1일 체류비를 일정별로 합산했습니다. 항공료, 중·석식, 공항 송영과 개인경비는 제외됩니다.</p>
+        <p>회원 1일 체류비를 일정별로 합산했습니다. 항공료 등은 별도입니다.</p>
       </div>
 
       <div class="trip-cost-grid">
@@ -2765,11 +2863,7 @@ img[loading="lazy"]{
     </h2>
 
     <p class="lead value-lead" data-reveal>
-      일반적인 일본 겨울 골프투어는 3박 4일 기준
-      <b>1인 약 129만원부터</b> 형성되어 있습니다.
-      항공이 포함되면 약 149만원 수준입니다.
-      정확한 비교를 위해 아래 계산은 양쪽 모두
-      <b>항공료를 제외한 현지 이용비용</b>을 기준으로 비교했습니다.
+      일반 겨울 골프투어는 3박 4일 기준 <b>항공 제외 약 129만원</b>, 항공 포함 약 149만원 수준입니다. 아래는 항공료를 제외한 현지 이용비용만 비교했습니다.
     </p>
 
     <div class="value-direct-head" data-reveal>
@@ -2781,9 +2875,7 @@ img[loading="lazy"]{
       </b>
 
       <span>
-        동일한 3박 4일 일정으로 비교하면
-        회원 이용 시 1인당 한 번에
-        <strong>약 85.7만~86.6만원의 비용 차이</strong>가 발생합니다.
+        3박 4일 한 번에 1인당 <strong>약 85.7만~86.6만원</strong>의 비용 차이가 발생합니다.
       </span>
     </div>
 
@@ -2934,7 +3026,7 @@ img[loading="lazy"]{
   <div class="wrap">
     <div class="kicker" data-reveal>AROUND HITOYOSHI</div>
     <h2 data-reveal>라운드가 끝난 뒤에도<br>체류가 불편하지 않도록</h2>
-    <p class="lead" style="margin-top:16px" data-reveal>히토요시 숙소 주변에는 편의점, 음식점, 온천, 병원 등 생활 편의시설을 이용할 수 있습니다.</p>
+    <p class="lead" style="margin-top:16px" data-reveal>숙소 주변에서 음식점, 편의점, 온천, 병원 등을 이용할 수 있습니다.</p>
     <div class="facilities">
       <div class="facility" data-reveal><img src="assets/facility-shop.jpg" alt="" loading="lazy" decoding="async"><span>FOOD · SHOP</span></div>
       <div class="facility" data-reveal><img src="assets/facility-hospital.jpg" alt="" loading="lazy" decoding="async"><span>MEDICAL</span></div>
@@ -2954,11 +3046,11 @@ img[loading="lazy"]{
     <div class="local-life-grid">
       <div class="local-card" data-reveal>
         <img src="assets/hitoyoshi-attractions.jpg" alt="히토요시 주변 관광 및 온천" loading="lazy" decoding="async">
-        <div class="local-card-body"><h3>온천 · 자연 · 지역 체험</h3><p class="small" style="margin-top:7px">라운드 후 온천과 지역 관광, 현지 식사 등으로 체류 시간을 다양하게 구성할 수 있습니다.</p></div>
+        <div class="local-card-body"><h3>온천 · 자연 · 지역 체험</h3><p class="small" style="margin-top:7px">라운드 후 온천, 관광, 현지 식사를 함께 즐길 수 있습니다.</p></div>
       </div>
       <div class="local-card" data-reveal>
         <img src="assets/hitoyoshi-area-map.jpg" alt="히토요시 주변 생활 및 골프장 위치" loading="lazy" decoding="async">
-        <div class="local-card-body"><h3>생활 인프라와 골프장 동선</h3><p class="small" style="margin-top:7px">호텔을 중심으로 음식점, 편의점, 온천, 체리CC·쿠마CC 등 주변 동선을 함께 살펴볼 수 있습니다.</p></div>
+        <div class="local-card-body"><h3>생활 인프라와 골프장 동선</h3><p class="small" style="margin-top:7px">숙소와 음식점, 온천, 주요 골프장 동선을 한눈에 확인할 수 있습니다.</p></div>
       </div>
     </div>
   </div>
@@ -2976,9 +3068,7 @@ img[loading="lazy"]{
     </h2>
 
     <p class="lead air-intro" data-reveal>
-      쿠마CC는 인천과 김해에서 모두 접근할 수 있지만,
-      항공편 도착·귀국 시간이 다르기 때문에
-      첫날과 마지막 날 라운드 계획을 출발 공항에 맞춰 잡아야 합니다.
+      인천과 김해 모두 이용 가능하지만 항공시간에 따라 첫날·마지막 날 라운드 구성이 달라집니다.
     </p>
 
     <div class="air-route-grid">
@@ -3274,7 +3364,7 @@ img[loading="lazy"]{
 <section>
   <div class="wrap seen-grid">
     <div class="seen-visual" data-reveal><img src="assets/membership-certificate.png" alt="쿠마CC 회원권 증서" loading="lazy" decoding="async"></div>
-    <div><div class="kicker" data-reveal>ALREADY PROVEN</div><h2 data-reveal>“쿠마CC?<br>예전에 한번 본 것 같은데요?”</h2><div class="seenword" data-reveal>맞습니다.</div><p style="margin-top:17px" data-reveal>쿠마CC 회원권은 갑자기 새롭게 만들어진 신규 회원권이 아닙니다. 수년간 실제 입회와 이용이 이어지고, 회원들의 예약과 현지 체류, 라운드 경험이 축적돼온 회원권입니다.</p><p class="lead green" style="margin-top:18px;font-weight:800" data-reveal>새로 생겼다는 점보다, 실제 이용사례가 쌓여 있다는 점을 함께 보셔야 합니다.</p></div>
+    <div><div class="kicker" data-reveal>ALREADY PROVEN</div><h2 data-reveal>“쿠마CC?<br>예전에 한번 본 것 같은데요?”</h2><div class="seenword" data-reveal>맞습니다.</div><p style="margin-top:17px" data-reveal>수년간 실제 입회와 이용이 이어져온 회원권입니다.</p><p class="lead green" style="margin-top:18px;font-weight:800" data-reveal>신규성보다 실제 이용사례가 축적돼 있다는 점이 중요합니다.</p></div>
   </div>
 </section>
 <!-- REVIEWS -->
@@ -3298,7 +3388,7 @@ img[loading="lazy"]{
   <div class="wrap">
     <div class="kicker" data-reveal>WINTER PREP · LAST 10 SPECIAL</div>
     <h2 data-reveal>겨울이 오기 전에 준비하는<br>마지막 10구좌 특별조건</h2>
-    <p class="lead" style="margin-top:16px;color:rgba(255,255,255,.82);max-width:820px" data-reveal>한겨울이 시작된 뒤 회원권을 찾기보다, 미리 준비하는 분을 위한 겨울 대비 사전 입회 혜택입니다. 8월 10일까지 입회 완료자에게 적용됩니다.</p>
+    <p class="lead" style="margin-top:16px;color:rgba(255,255,255,.82);max-width:820px" data-reveal>겨울 전에 준비하는 사전 입회 혜택으로 8월 10일까지 적용됩니다.</p>
 
     <div class="winter-event-badge" data-reveal><span>WINTER EARLY PREP</span><b>2026.08.10까지</b></div>
 
@@ -3318,7 +3408,7 @@ img[loading="lazy"]{
     <div class="consult-service-card" data-reveal>
       <small>CONSULTATION MEMBER CARE</small>
       <b>상담 고객에게 담당자 전담 서비스와 지원 가능 범위를 개별 안내드립니다.</b>
-      <p>출발 공항 선택, 항공 일정 검토, 숙박과 송영 동선, 티타임 및 예약 진행처럼 실제 이용에 필요한 부분을 회원님의 일정과 이용 인원에 맞춰 직접 안내합니다. 적용 가능한 추가 지원사항은 상담 후 개별적으로 확인해드립니다.</p>
+      <p>항공, 숙박, 송영, 티타임과 예약 절차를 일정과 인원에 맞춰 안내합니다.</p>
     </div>
 
     <p class="small" style="margin-top:16px;color:rgba(255,255,255,.52)" data-reveal>
@@ -3368,9 +3458,7 @@ img[loading="lazy"]{
       </h2>
 
       <p class="lead" style="margin-top:16px" data-reveal>
-        김대우 VIP팀장을 통해 KUMA 회원권 입회를 완료하신 고객에게
-        실제 라운드에서 사용할 수 있는 골프용품을
-        입회 감사선물로 제공합니다.
+        김대우 VIP팀장을 통해 입회를 완료한 고객에게 실전 골프용품을 감사선물로 제공합니다.
       </p>
 
       <div class="gift-personal-badge" data-reveal>
@@ -3473,7 +3561,7 @@ img[loading="lazy"]{
       <div class="faq-item"><button class="faq-btn" type="button" aria-expanded="false"><b>Q. 김해공항 출발 시 추천 일정은 어떻게 되나요?</b><span class="faq-plus"></span></button><div class="faq-answer"><div class="faq-answer-inner">항공시간을 고려하면 첫날 9홀, 둘째 날 27홀, 셋째 날 이른 티업 18홀 구성이 가장 효율적입니다. 다만 첫날 9홀과 마지막 날 18홀은 항공 지연, 입국수속, 일몰, 티타임에 따라 조정될 수 있습니다.</div></div></div>
       <div class="faq-item"><button class="faq-btn" type="button" aria-expanded="false"><b>Q. 숙소에서 골프장까지 얼마나 걸리나요?</b><span class="faq-plus"></span></button><div class="faq-answer"><div class="faq-answer-inner">시내호텔 또는 온천 숙소 기준으로 체리CC 약 7분, 쿠마CC 약 15분, 크라운CC 약 25분 정도입니다. 실제 시간은 숙소 위치와 교통상황에 따라 달라질 수 있습니다.</div></div></div>
       <div class="faq-item"><button class="faq-btn" type="button" aria-expanded="false"><b>Q. 원화로 표시된 체류비가 실제 결제금액인가요?</b><span class="faq-plus"></span></button><div class="faq-answer"><div class="faq-answer-inner">아닙니다. 투어클럽 공식 요금표의 평일 15,800엔, 주말 16,800엔, 월·금 셀프데이 14,000엔을 2026년 7월 30일 참고환율인 100엔당 약 894원으로 환산한 금액입니다. 평일은 그린피 6,500엔과 숙박비 9,300엔, 주말은 그린피 7,000엔과 숙박비 9,800엔, 셀프데이는 그린피 4,700엔과 숙박비 9,300엔으로 구성됩니다. 실제 결제금액은 환율과 현지 조건에 따라 달라질 수 있습니다.</div></div></div>
-      <div class="faq-item"><button class="faq-btn" type="button" aria-expanded="false"><b>Q. 몇 번 이용하면 회원권이 이득인가요?</b><span class="faq-plus"></span></button><div class="faq-answer"><div class="faq-answer-inner">비회원 여행가격과 향후 회원권 양도금액이 고정되어 있지 않아 정확한 손익분기 횟수를 단정할 수는 없습니다. 다만 입회금을 이용 인원과 횟수로 단순 배분하면, 누적 30회 기준 SILVER는 1인 1회당 약 20.2만원, GOLD는 약 13.75만원 수준입니다. 1년에 10회 이상, 최소 3년 이상 반복 이용하고 정원을 꾸준히 채우는 분에게 비교 가치가 커집니다.</div></div></div>
+      <div class="faq-item"><button class="faq-btn" type="button" aria-expanded="false"><b>Q. 몇 번 이용하면 회원권이 이득인가요?</b><span class="faq-plus"></span></button><div class="faq-answer"><div class="faq-answer-inner">겨울철 일반 투어가를 항공 제외 1인 약 129만원으로 비교하면, SILVER는 2인 기준 약 7~8회, GOLD는 4인 기준 약 5회 이용 시 누적 비용 차이가 입회금과 비슷해지는 구간입니다. 실제 결과는 환율, 일정, 이용 인원과 향후 양도금액에 따라 달라집니다.</div></div></div>
       <div class="faq-item"><button class="faq-btn" type="button" aria-expanded="false"><b>Q. 상담 시 별도로 안내받을 수 있는 서비스가 있나요?</b><span class="faq-plus"></span></button><div class="faq-answer"><div class="faq-answer-inner">출발 공항과 항공편 선택, 숙박, 송영, 티타임, 예약 진행처럼 실제 이용에 필요한 담당자 전담 서비스를 개별 안내합니다. 추가 지원사항은 상담 내용과 적용 가능 여부를 확인한 뒤 최종 안내되며, 공개된 공식 회원 혜택과는 구분됩니다.</div></div></div>
 
 
@@ -3548,11 +3636,7 @@ img[loading="lazy"]{
       </h2>
 
       <p class="lead" style="margin-top:18px;">
-        회원권은 계약으로 끝나는 상품이 아닙니다.
-
-        입회 후 예약부터 일정 변경, 숙박, 현지 이동,
-        동반자 이용조건과 예상하지 못한 상황의 대응까지
-        결국 한 명의 담당자를 통해 계속 이용하게 됩니다.
+        입회 후 예약, 숙박, 이동, 동반자 조건과 일정 변경까지 같은 담당자가 계속 관리합니다.
       </p>
 
 
@@ -3598,11 +3682,7 @@ img[loading="lazy"]{
         </div>
 
         <span style="margin-top:13px;">
-          직접 골프를 즐기는 골퍼의 입장에서
-          회원권 조건을 이해하기 쉽게 설명하고,
-
-          입회 전 비교부터 입회 후 실제 이용까지
-          한 사람의 전담 창구로 직접 관리하겠습니다.
+          골퍼의 입장에서 조건을 쉽게 설명하고 입회 전후를 한 명의 전담 창구로 관리합니다.
         </span>
 
       </div>
@@ -3621,12 +3701,7 @@ img[loading="lazy"]{
             </b>
 
             <span>
-              네이버 공식 골프 인플루언서이자
-              골프 전문 블로거로 활동하며,
-
-              회원권 가격뿐 아니라 기명회원 동행조건,
-              동반자 이용범위, 현지 이용료와 별도비용까지
-              실제 이용자의 입장에서 이해하기 쉽게 안내합니다.
+              가격, 기명회원 동행조건, 동반자 범위와 현지 비용을 이해하기 쉽게 안내합니다.
             </span>
           </div>
 
@@ -3643,12 +3718,7 @@ img[loading="lazy"]{
             </b>
 
             <span>
-              예약, 숙박, 항공, 공항 송영,
-              골프장 이용과 일정 변경 문의를 할 때마다
-              여러 담당자에게 처음부터 다시 설명하지 않도록
-
-              한 명의 전담 창구로
-              회원님의 이용 내용을 지속적으로 관리합니다.
+              예약, 숙박, 항공, 송영과 일정 변경을 한 명의 전담 창구에서 관리합니다.
             </span>
           </div>
 
@@ -3665,11 +3735,7 @@ img[loading="lazy"]{
             </b>
 
             <span>
-              회원권을 판매하고 연락이 끝나는 담당자가 아니라,
-
-              실제로 일본 골프를 이용하시는 동안
-              필요할 때 가장 먼저 찾을 수 있는
-              해외골프 전담매니저가 되겠습니다.
+              입회 후 실제 이용 과정까지 연결되는 해외골프 전담매니저로 관리합니다.
             </span>
           </div>
 
@@ -3819,6 +3885,19 @@ img[loading="lazy"]{
 
 </div>
 
+
+
+<!-- 하단 연출형 관심도 표시 -->
+<div class="live-status-bar" role="status" aria-live="polite" aria-atomic="true">
+  <span class="live-status-dot" aria-hidden="true"></span>
+  <div class="live-status-copy">
+    <small>LIVE INTEREST</small>
+    <b>
+      현재 <strong id="viewerCount">6명</strong>이 페이지를 확인 중입니다.
+    </b>
+    <span class="live-status-note">※ 실시간 접속자 연동이 아닌 화면 연출입니다.</span>
+  </div>
+</div>
 
 <!-- 모바일 하단 고정 전화·문자 상담 -->
 <div class="mobile-cta">
@@ -4051,6 +4130,44 @@ document.querySelectorAll('[data-sms-prefill]').forEach(link => {
       `sms:${phoneNumber}${separator}body=${encodedMessage}`;
   });
 });
+
+
+/* 하단 연출형 관심도 카운터
+   실제 접속자 수가 아니라 화면 연출용 숫자입니다. */
+const viewerCount = document.getElementById('viewerCount');
+let simulatedViewerCount = 6;
+let viewerDirection = 1;
+
+function updateSimulatedViewerCount(){
+  if(!viewerCount) return;
+
+  const step = Math.random() < .72 ? 1 : 2;
+
+  if(simulatedViewerCount >= 19){
+    viewerDirection = -1;
+  }else if(simulatedViewerCount <= 6){
+    viewerDirection = 1;
+  }else if(Math.random() < .18){
+    viewerDirection *= -1;
+  }
+
+  simulatedViewerCount += viewerDirection * step;
+  simulatedViewerCount = Math.max(6, Math.min(19, simulatedViewerCount));
+
+  viewerCount.classList.add('is-changing');
+
+  window.setTimeout(()=>{
+    viewerCount.textContent = `${simulatedViewerCount}명`;
+    viewerCount.classList.remove('is-changing');
+  },180);
+}
+
+if(viewerCount && !reduceMotion){
+  window.setInterval(
+    updateSimulatedViewerCount,
+    2600 + Math.floor(Math.random() * 1700)
+  );
+}
 
 </script>
 </body>
