@@ -1976,6 +1976,257 @@ img[loading="lazy"]{
   }
 }
 
+
+/* =========================================================
+   KUMAMOTO EARTHQUAKE / LOCAL OPERATION STATUS
+========================================================= */
+.operation-status-section{
+  padding:0;
+  background:#0f2b21;
+  color:#fff;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.operation-status-wrap{
+  padding-top:56px;
+  padding-bottom:58px;
+}
+
+.operation-status-head{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:28px;
+  align-items:end;
+}
+
+.operation-status-title{
+  max-width:760px;
+}
+
+.operation-status-title .status-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#e6cc98;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+
+.operation-status-title .status-eyebrow:before{
+  content:'';
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#72d39f;
+  box-shadow:0 0 0 5px rgba(114,211,159,.12);
+}
+
+.operation-status-title h2{
+  margin-top:14px;
+  color:#fff;
+}
+
+.operation-status-title h2 strong{
+  color:#e7cc98;
+}
+
+.operation-status-title p{
+  margin-top:15px;
+  max-width:720px;
+  color:rgba(255,255,255,.72);
+  font-size:16px;
+  line-height:1.85;
+}
+
+.operation-status-time{
+  min-width:200px;
+  padding:15px 17px;
+  border-radius:16px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.62);
+  text-align:right;
+  font-size:10px;
+  line-height:1.55;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+
+.operation-status-time b{
+  display:block;
+  color:#fff;
+  font-size:14px;
+  letter-spacing:0;
+}
+
+.operation-status-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:28px;
+}
+
+.operation-status-card{
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  padding:22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.065);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.operation-status-card.primary{
+  background:
+    radial-gradient(circle at 88% 10%,rgba(228,201,145,.2),transparent 31%),
+    linear-gradient(150deg,rgba(255,255,255,.1),rgba(255,255,255,.05));
+  border-color:rgba(230,204,152,.35);
+}
+
+.operation-status-label{
+  display:inline-flex;
+  align-items:center;
+  align-self:flex-start;
+  gap:7px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(114,211,159,.12);
+  color:#9ae7ba;
+  font-size:9px;
+  line-height:1.3;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.operation-status-label.amber{
+  background:rgba(230,190,111,.13);
+  color:#efd091;
+}
+
+.operation-status-label:before{
+  content:'';
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:currentColor;
+}
+
+.operation-status-card h3{
+  margin-top:18px;
+  color:#fff;
+  font-size:19px;
+  line-height:1.45;
+}
+
+.operation-status-card p{
+  margin-top:9px;
+  color:rgba(255,255,255,.67);
+  font-size:12px;
+  line-height:1.75;
+}
+
+.operation-status-card .status-source{
+  margin-top:auto;
+  padding-top:17px;
+  color:rgba(255,255,255,.4);
+  font-size:9px;
+  line-height:1.5;
+  font-weight:750;
+}
+
+.operation-status-notice{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px;
+  align-items:start;
+  margin-top:18px;
+  padding:18px 20px;
+  border-radius:18px;
+  background:#f5efe3;
+  color:#4f4637;
+}
+
+.operation-status-notice b{
+  padding:6px 9px;
+  border-radius:9px;
+  background:#c7a263;
+  color:#17251f;
+  font-size:9px;
+  line-height:1.4;
+  font-weight:950;
+  letter-spacing:.06em;
+}
+
+.operation-status-notice p{
+  font-size:12px;
+  line-height:1.8;
+}
+
+.operation-source-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.operation-source-links a{
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.62);
+  font-size:9px;
+  line-height:1.35;
+  font-weight:750;
+  text-decoration:none;
+}
+
+.operation-source-links a:hover{
+  color:#fff;
+  border-color:rgba(230,204,152,.45);
+}
+
+@media(max-width:980px){
+  .operation-status-head{
+    grid-template-columns:1fr;
+  }
+
+  .operation-status-time{
+    min-width:0;
+    width:max-content;
+    text-align:left;
+  }
+
+  .operation-status-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:620px){
+  .operation-status-wrap{
+    padding-top:42px;
+    padding-bottom:44px;
+  }
+
+  .operation-status-title p{
+    font-size:14px;
+  }
+
+  .operation-status-grid{
+    grid-template-columns:1fr;
+  }
+
+  .operation-status-card{
+    min-height:0;
+  }
+
+  .operation-status-notice{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2013,6 +2264,94 @@ img[loading="lazy"]{
       <div class="hero-stat"><b>63 HOLES</b><span>3 COURSES LINKED</span></div>
       <div class="hero-stat"><b>LAST 10</b><span>COMPANY INVENTORY</span></div>
     </div>
+  </div>
+</section>
+
+<!-- LOCAL OPERATION STATUS -->
+<section class="operation-status-section" id="operation-status">
+  <div class="wrap operation-status-wrap">
+
+    <div class="operation-status-head">
+      <div class="operation-status-title" data-reveal>
+        <div class="status-eyebrow">LOCAL OPERATION UPDATE</div>
+        <h2>
+          KUMA CC는 공식 점검 결과<br>
+          <strong>시설과 코스에 피해 없이 정상 영업 중입니다.</strong>
+        </h2>
+        <p>
+          구마모토 지진 이후 확인된 공식 운영정보를 기준으로 안내드립니다.
+          골프장은 정상 운영 중이지만, 공항에서 히토요시·쿠마 지역으로 이동하는 일부 도로와
+          지역 생활 인프라는 아직 복구가 진행 중입니다.
+        </p>
+      </div>
+
+      <div class="operation-status-time" data-reveal>
+        LAST UPDATE
+        <b>2026.07.30 · 11:00</b>
+        JAPAN / KOREA TIME
+      </div>
+    </div>
+
+    <div class="operation-status-grid">
+
+      <article class="operation-status-card primary" data-reveal>
+        <span class="operation-status-label">NORMAL OPERATION</span>
+        <h3>KUMA CC<br>정상 영업</h3>
+        <p>
+          골프장 공식 발표 기준 시설과 코스 모두 피해가 없으며,
+          안전 확인을 진행하면서 정상적으로 영업하고 있습니다.
+        </p>
+        <div class="status-source">KUMA COUNTRY CLUB 공식 발표 · 7월 29일</div>
+      </article>
+
+      <article class="operation-status-card" data-reveal>
+        <span class="operation-status-label">FLIGHT OPERATION</span>
+        <h3>아소구마모토공항<br>정상 운항 예정</h3>
+        <p>
+          7월 30일 평상 운항을 예정하고 있습니다.
+          다만 여진 상황에 따라 변경될 수 있어 항공사별 운항정보 확인이 필요합니다.
+        </p>
+        <div class="status-source">아소구마모토공항 공식 안내 · 7월 30일</div>
+      </article>
+
+      <article class="operation-status-card" data-reveal>
+        <span class="operation-status-label amber">PARTIAL ROAD CLOSURE</span>
+        <h3>고속도로<br>일부 구간 통제</h3>
+        <p>
+          마시키구마모토공항IC부터 마쓰바세IC 구간은 7월 30일 오전 9시 4분 통제가 해제됐습니다.
+          마쓰바세IC부터 에비노IC 구간은 현재 통제가 이어지고 있습니다.
+        </p>
+        <div class="status-source">NEXCO 서일본 제5보 · 7월 30일</div>
+      </article>
+
+      <article class="operation-status-card" data-reveal>
+        <span class="operation-status-label amber">LOCAL RECOVERY</span>
+        <h3>히토요시<br>일부 복구 진행 중</h3>
+        <p>
+          히토요시 시내 일부 지역에서 단수 또는 수압 저하가 확인되고 있습니다.
+          숙박과 송영 일정은 예약 전 최신 현지 상황을 확인해 안내드립니다.
+        </p>
+        <div class="status-source">히토요시시 재난 안내 · 7월 30일</div>
+      </article>
+
+    </div>
+
+    <div class="operation-status-notice" data-reveal>
+      <b>IMPORTANT</b>
+      <p>
+        KUMA CC의 정상 영업과 전체 여행 동선의 정상화는 서로 다른 사항입니다.
+        항공편, 숙소, 공항 송영과 도로 상황은 여진 및 복구 진행에 따라 변경될 수 있으므로,
+        실제 예약과 출발 일정은 김대우 VIP팀장이 최신 현지 운영정보를 확인한 뒤 안내드립니다.
+      </p>
+    </div>
+
+    <div class="operation-source-links" data-reveal>
+      <a href="https://kuma-cc.com/" target="_blank" rel="noopener noreferrer">KUMA CC 공식 운영 안내</a>
+      <a href="https://www.kumamoto-airport.co.jp/" target="_blank" rel="noopener noreferrer">아소구마모토공항 공식 안내</a>
+      <a href="https://www.w-nexco.co.jp/emc/20260730044943.html" target="_blank" rel="noopener noreferrer">NEXCO 서일본 교통 안내</a>
+      <a href="https://www.city.hitoyoshi.lg.jp/" target="_blank" rel="noopener noreferrer">히토요시시 재난 안내</a>
+    </div>
+
   </div>
 </section>
 
@@ -3040,6 +3379,22 @@ img[loading="lazy"]{
         </div>
       </div>
 
+
+      <div class="faq-item">
+        <button class="faq-btn" type="button" aria-expanded="false">
+          <b>Q. 구마모토 지진 이후에도 KUMA CC 이용이 가능한가요?</b>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            KUMA CC는 7월 29일 공식 발표를 통해 시설과 코스에 피해가 없으며 정상 영업 중이라고 안내했습니다.
+            아소구마모토공항도 7월 30일 평상 운항을 예정하고 있습니다.
+            다만 마쓰바세IC부터 에비노IC 사이 고속도로 통제와 히토요시 일부 지역의 단수·수압 저하가 남아 있으므로,
+            숙박과 공항 송영을 포함한 실제 일정은 예약 전에 최신 현지 상황을 다시 확인해 안내드립니다.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -3342,7 +3697,8 @@ img[loading="lazy"]{
   회사 보유 잔여 수량은 계약 및 현지 운영 상황에 따라
   변동될 수 있으므로 입회 전 최종 조건을 반드시 확인하시기 바랍니다.<br>
   ※ 원화 환산액은 2026년 7월 28일 참고환율을 적용한 금액이며 실제 결제금액과 다를 수 있습니다.<br>
-  ※ 입회 고객 웰컴 기프트는 담당자 제공 감사선물로, 준비 수량과 제품 구성은 재고 상황에 따라 변경 또는 종료될 수 있습니다.
+  ※ 입회 고객 웰컴 기프트는 담당자 제공 감사선물로, 준비 수량과 제품 구성은 재고 상황에 따라 변경 또는 종료될 수 있습니다.<br>
+  ※ 지진 이후 현지 운영정보는 2026년 7월 30일 오전 공식 발표 기준이며, 여진과 복구 상황에 따라 변경될 수 있습니다.
 </footer>
 
 </div>
@@ -3492,6 +3848,7 @@ function buildTrustMessages(){
     getDeadlineLabel()+' · 소진 시 조기 종료',
     'GOLD 공식 입회 혜택 · 50만원 페이백',
     '담당자 전담 서비스 · 지원 가능 범위 상담 안내',
+    'KUMA CC 시설·코스 피해 없음 · 정상 영업 공식 확인',
     '입회 고객 웰컴 기프트 · 골프티 100개 제공',
     '김대우 VIP팀장 · 전화·문자 직통상담',
     '실제 이용 후기와 회원 이용조건 공개'
