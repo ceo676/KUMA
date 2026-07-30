@@ -3720,6 +3720,8 @@ img[loading="lazy"]{
         <a
           class="direct-contact-btn sms"
           href="sms:01025991095"
+          data-sms-prefill
+          data-sms-number="01025991095"
           aria-label="김대우 VIP팀장에게 문자 상담"
         >
 
@@ -3846,6 +3848,8 @@ img[loading="lazy"]{
     <a
       class="mobile-contact sms"
       href="sms:01025991095"
+      data-sms-prefill
+      data-sms-number="01025991095"
       aria-label="김대우 VIP팀장 문자 상담"
     >
       문자
@@ -4026,6 +4030,27 @@ function updateWinterCountdown(){
 
 updateWinterCountdown();
 setInterval(updateWinterCountdown, 60000);
+
+/* 문자 상담 자동입력 */
+const kumaSmsMessage = [
+  '쿠마CC 입회 문의 드립니다.',
+  '성함 : ',
+  '관심 구좌 : SILVER/GOLD'
+].join('\n');
+
+document.querySelectorAll('[data-sms-prefill]').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+
+    const phoneNumber = link.dataset.smsNumber || '01025991095';
+    const encodedMessage = encodeURIComponent(kumaSmsMessage);
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const separator = isIOS ? '&' : '?';
+
+    window.location.href =
+      `sms:${phoneNumber}${separator}body=${encodedMessage}`;
+  });
+});
 
 </script>
 </body>
